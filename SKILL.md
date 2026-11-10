@@ -35,7 +35,10 @@ Everything below serves these. They are why a video like this can go out under h
 - `W`: the screenplay work dir, `~/Borumi Projects/<Name> screenplay`. It holds the edit. Paths inside
   scenes are relative to `W`. `W/proof` is a link to `P/proof`; everything else the edit shows is in
   `W/media/`.
-- `<skill>`: this folder. **Every `scripts/` command is run inside `P`** as
+- `<skill>`: this folder, linked at `~/.claude/skills/one-prompt-video` (repo
+  `Samin12/one-prompt-video-skill`). The `scripts/`, `briefs/`, `references/` and `examples/` this file
+  names are in it; if you only have this file, clone the repo first.
+  **Every `scripts/` command is run inside `P`** as
   `python3 <skill>/scripts/<name>.py` (or from anywhere with `--project <P>`). `screenplay` commands take
   the work dir as an argument. Each script prints its usage with no arguments or `--help`.
 
