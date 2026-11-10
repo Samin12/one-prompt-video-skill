@@ -1,0 +1,296 @@
+# Part D: The Orchestrator. w717 - w980 (3:45.6 - 5:11.0). Chapter card at w717 (covers the first 2 s).
+# New media for this part: media/D/ (stills, crops and re-timed copies of the two contractor B-roll clips,
+# all made from media/broll/contractor-plans.mp4 and contractor-inspect.mp4; nothing generated).
+
+# ---------- 3:45.6 "the part you can copy" / "you hire a general contractor" / "does not lay the bricks" ----------
+# The first frame of the contractor B-roll, held, with the camera moving on his words. The clip then starts
+# from this same frame in the next scene. Story px = 50 + 0.677 * frame x, 155 + 0.677 * frame y.
+- kind: stage
+  at: w717
+  elements:
+    - type: story
+      actors:
+        - { id: lot, kind: image, src: media/D/plans-first.png, w: 1300, h: 731, x: 700, y: 520 }
+        - { id: copy, kind: badge, x: 700, y: 75, text: "The part you can copy", icon: copy, color: accent }
+        - { id: you, kind: badge, x: 372, y: 262, text: "You", icon: user, at: w740 }
+        - { id: gc, kind: badge, x: 790, y: 262, text: "General contractor", icon: hard-hat, color: accent, at: w743 }
+        - { id: no, kind: icon, icon: ban, tile: false, size: 190, x: 190, y: 730, color: bad, at: w748 }
+      beats:
+        - { at: w734, exit: copy }
+        - { at: w736, follow: [130, 190, 960, 679] }
+        - { at: w740, pulse: you }
+        - { at: w743, pulse: gc }
+        - { at: w745, follow: all }
+        - { at: w745, exit: you }
+        - { at: w748, shake: no }
+        - { at: w751, pulse: no }
+
+# ---------- 3:55.4 B-roll: reads the plans, splits the job, the three trades walk in ----------
+# Re-timed so the electrician, the plumber and the painter each walk in on their word.
+- kind: stage
+  at: w752
+  transition: cut
+  elements:
+    - type: image
+      src: media/D/contractor-plans-timed.mp4
+      size: [1920, 1080]
+      highlight:
+        - { x: 812, y: 592, w: 86, h: 108, at: w757, style: box }
+        - { x: 908, y: 592, w: 86, h: 108, at: w758, style: box }
+        - { x: 1004, y: 592, w: 86, h: 108, at: w760, style: box }
+
+# ---------- 4:01.7 "They tell each one exactly what done looks like" ----------
+- kind: stage
+  at: w771
+  transition: cut
+  elements:
+    - type: story
+      actors:
+        - { id: lot, kind: image, src: media/D/plans-trades.png, w: 1300, h: 731, x: 700, y: 520 }
+        - { id: o1, kind: document, x: 700, y: 540, scale: 0.55, title: "Work order", at: w772 }
+        - { id: o2, kind: document, x: 700, y: 540, scale: 0.55, title: "Work order", at: w773 }
+        - { id: o3, kind: document, x: 700, y: 540, scale: 0.55, title: "Work order", at: w774 }
+        - { id: done, kind: badge, x: 1060, y: 236, text: "Done = every outlet works", icon: circle-check, color: good, at: w776 }
+      beats:
+        - { follow: [420, 190, 930, 656] }
+        - { at: w772, move: o1, to: [1032, 560], hold: 0.6s }
+        - { at: w773, move: o2, to: [1150, 585], hold: 0.6s }
+        - { at: w774, move: o3, to: [1265, 600], hold: 0.6s }
+        - { at: w777, pulse: o1 }
+
+# ---------- 4:04.2 B-roll: the owner waits outside, the contractor inspects all three jobs ----------
+# Re-timed: the three checks land on "they", "inspect" and "work".
+- kind: stage
+  at: w780
+  transition: cut
+  elements:
+    - type: image
+      src: media/D/contractor-inspect-timed.mp4
+      size: [1920, 1080]
+
+# ---------- 4:08.5 the two rates: a short line and a long line ----------
+- kind: stage
+  at: w796
+  transition: cut
+  elements:
+    - type: story
+      actors:
+        - { id: gc, kind: image, src: media/D/contractor.png, w: 210, h: 210, x: 190, y: 270, label: "The contractor" }
+        - { id: rate1, kind: badge, x: 560, y: 170, text: "Expensive rate", icon: dollar-sign, color: accent }
+        - { id: a1, kind: arrow, from: [340, 290], to: [470, 290], at: w799 }
+        - { id: t1, kind: text, x: 790, y: 290, size: 46, text: "A few hours of *thinking*", at: w800 }
+        - { id: tr, kind: image, src: media/D/trades.png, w: 210, h: 210, x: 190, y: 690, label: "The trades", at: w805 }
+        - { id: rate2, kind: badge, x: 545, y: 590, text: "Cheaper rate", icon: dollar-sign, color: good, at: w808 }
+        - { id: a2, kind: arrow, from: [340, 710], to: [1350, 710], color: good, at: w811 }
+        - { id: t2, kind: text, x: 845, y: 800, size: 46, text: "Hundreds of hours of *doing*", at: w811 }
+      beats:
+        - { at: w796, pulse: rate1 }
+        - { at: w803, pulse: a1 }
+        - { at: w808, pulse: rate2 }
+        - { at: w815, pulse: a2 }
+
+# ---------- 4:14.9 "And that's an orchestrator." ----------
+- kind: stage
+  at: w816
+  transition: cut
+  elements:
+    - { type: title, at: w816, text: "*Orchestrator*", size: xl }
+
+# ---------- 4:16.3 the mechanic: Fable 5.2 on top, Sonnet 5.5 and Haiku 5.5 below ----------
+- kind: stage
+  at: w820
+  transition: cut
+  elements:
+    - type: story
+      actors:
+        - { id: boss, kind: icon, icon: claude, size: 190, x: 700, y: 300, label: "Fable 5.2" }
+        - { id: gc, kind: image, src: media/D/contractor.png, w: 170, h: 170, x: 390, y: 300, label: "The contractor", at: w824 }
+        - { id: v1, kind: badge, x: 1030, y: 215, text: "Plans", icon: map, at: w826 }
+        - { id: v2, kind: badge, x: 1030, y: 300, text: "Hands out the work", icon: send, at: w828 }
+        - { id: v3, kind: badge, x: 1030, y: 385, text: "Checks it", icon: circle-check, color: good, at: w834 }
+        - { id: son, kind: icon, icon: claude, size: 140, x: 390, y: 770, color: info, label: "Sonnet 5.5", at: w840 }
+        - { id: hai, kind: icon, icon: claude, size: 140, x: 1010, y: 770, color: info, label: "Haiku 5.5", at: w842 }
+        - { id: tr, kind: image, src: media/D/trades.png, w: 170, h: 170, x: 700, y: 770, label: "The trades", at: w845 }
+        - { id: b1, kind: document, x: 640, y: 540, scale: 0.4, title: Brief, at: w848 }
+        - { id: b2, kind: document, x: 760, y: 540, scale: 0.4, title: Brief, at: w848 }
+        - { id: r1, kind: document, x: 390, y: 600, scale: 0.4, title: Report, color: good, at: w858 }
+        - { id: r2, kind: document, x: 1010, y: 600, scale: 0.4, title: Report, color: good, at: w858 }
+      beats:
+        - { follow: [200, 20, 1000, 707] }
+        - { at: w820, pulse: boss }
+        - { at: w836, follow: all }
+        - { at: w845, connect: boss, to: son, curve: 0.15, until: w857 }
+        - { at: w845, connect: boss, to: hai, curve: -0.15, until: w857 }
+        - { at: w848, move: b1, to: [390, 600], until: w850 }
+        - { at: w848, move: b2, to: [1010, 600], until: w850 }
+        - { at: w851, exit: b1 }
+        - { at: w851, exit: b2 }
+        - { at: w853, swap: son, role: "Its own chat" }
+        - { at: w853, swap: hai, role: "Its own chat" }
+        - { at: w855, pulse: son }
+        - { at: w855, pulse: hai }
+        - { at: w858, connect: son, to: [610, 455], curve: 0.15, color: good }
+        - { at: w858, connect: hai, to: [790, 455], curve: -0.15, color: good }
+        - { at: w858, move: r1, to: [500, 560], until: w859 }
+        - { at: w858, move: r2, to: [900, 560], until: w859 }
+
+# ---------- 4:30.1 his own Sep 2 video: the real "Octopus Workflow" slide ----------
+- kind: stage
+  at: w860
+  transition: cut
+  elements:
+    - type: image
+      src: media/own/f51-octopus.mp4
+      size: [1920, 1080]
+      crop: [24, 24, 1872, 1032]
+      url: youtube.com/watch?v=XqnYcLC45iE
+      caption: "The real Samin"
+      source: "youtube.com · Samin Yasar, Sep 2, 2026"
+      highlight:
+        - { x: 195, y: 100, w: 670, h: 90, at: w864 }
+        - { x: 1612, y: 776, w: 226, h: 228, at: w868, style: box }
+        - { x: 760, y: 180, w: 315, h: 270, at: w874, style: box }
+        - { x: 560, y: 462, w: 690, h: 245, at: w877, style: box }
+
+# ---------- 4:35.8 the prices: $40, $10, $0.50 (one table, two crops, the big numbers under it) ----------
+# The word joiner (U+2060) inside each number only stops the engine's count-up, so the figure is exact
+# from its first frame (the two after "prompts" only force the line break in the label). Card 2 holds the Sonnet 5.5 row and the first Haiku 5.5 tier together, so each
+# price cell is boxed on its word and stays boxed beside its big number until the scene ends.
+- kind: stage
+  at: w880
+  transition: cut
+  elements:
+    - type: image
+      at: w880
+      until: "w895 +0.25s"
+      src: proof/official/orch-pricing-table.png
+      size: [2880, 1800]
+      crop: [604, 779, 1720, 308]
+      url: platform.claude.com/docs/en/about-claude/pricing
+      caption: "Per million output tokens"
+      source: "platform.claude.com · captured Nov 9, 2026"
+      highlight:
+        - { x: 737, y: 928, w: 236, h: 42, at: w888 }
+        - { x: 1330, y: 979, w: 49, h: 38, at: w891, style: box }
+        - { x: 1324, y: 864, w: 100, h: 38, at: w892 }
+    - type: image
+      at: w897
+      src: proof/official/orch-pricing-table.png
+      size: [2880, 1800]
+      crop: [604, 1232, 1720, 406]
+      url: platform.claude.com/docs/en/about-claude/pricing
+      caption: "Output price"
+      source: "platform.claude.com · captured Nov 9, 2026"
+      highlight:
+        - { x: 737, y: 1248, w: 262, h: 42, at: w897 }
+        - { x: 1330, y: 1283, w: 47, h: 38, at: w900, style: box }
+        - { x: 737, y: 1522, w: 240, h: 42, at: w902 }
+        - { x: 1330, y: 1482, w: 76, h: 38, at: w905, style: box }
+    - type: chips
+      at: w882
+      until: "w889 -0.1s"
+      items:
+        - { text: "Output price, per million tokens", icon: wallet, at: w882 }
+    - type: stat
+      at: w891
+      items:
+        - { text: "$4⁠0", sub: "Fable 5.2", at: w891 }
+        - { text: "$1⁠0", sub: "Sonnet 5.5", at: w900 }
+        - { text: "$0⁠.50", sub: "Haiku 5.5 prompts⁠⁠ up to 100,000 tokens", at: w905 }
+
+# ---------- 4:47.1 Anthropic's test: $563 alone on high effort, $165 with Sonnet 5.5 workers, 71% less,
+# ---------- then the catch: 7.5 points lower (F1 0.909 vs 0.833) ----------
+# Two elements share a row only when one ends 0.4 s before the next starts (`until` counts from the END of
+# its word), so every hand-over below leaves that gap. Closer than that and the panel splits in three.
+# Each crop takes the full line above and below its marked figure, so no mark touches the card edge.
+- kind: stage
+  at: w910
+  transition: cut
+  elements:
+    - type: image
+      at: w910
+      until: "w924 +0.2s"
+      src: proof/official/fc-defect-search-563-alone.png
+      size: [2880, 1800]
+      crop: [700, 396, 1650, 320]
+      url: platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence
+      caption: "Anthropic's own test"
+      source: "platform.claude.com · captured Nov 9, 2026"
+      highlight:
+        - { x: 782, y: 410, w: 678, h: 40, at: w910 }
+        - { x: 1457, y: 586, w: 345, h: 40, at: w912 }
+        - { x: 1524, y: 630, w: 410, h: 40, at: w920 }
+        - { x: 1943, y: 630, w: 135, h: 38, at: w923, style: box }
+    - type: image
+      at: w926
+      until: "w935 +0.1s"
+      src: proof/official/fc-defect-search-165-team.png
+      size: [2880, 1800]
+      crop: [700, 408, 1650, 308]
+      url: platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence
+      caption: "Anthropic's own test"
+      source: "platform.claude.com · captured Nov 9, 2026"
+      highlight:
+        - { x: 1943, y: 456, w: 135, h: 38, at: w926 }
+        - { x: 1855, y: 588, w: 410, h: 40, at: w928 }
+        - { x: 782, y: 630, w: 632, h: 40, at: w932 }
+        - { x: 1421, y: 630, w: 132, h: 38, at: w935, style: box }
+    - type: image
+      at: "w937 +0.05s"
+      until: w940
+      src: proof/official/fc-defect-search-165-team.png
+      size: [2880, 1800]
+      crop: [700, 1245, 1650, 219]
+      url: platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence
+      caption: "Anthropic's own test"
+      source: "platform.claude.com · captured Nov 9, 2026"
+      highlight:
+        - { x: 1775, y: 1379, w: 116, h: 40, at: w938, style: box }
+    # The same sentence again for the catch, without the box on "71% less.": only "7.5 lower than at high".
+    - type: image
+      at: "w944 +0.15s"
+      src: proof/official/fc-defect-search-165-team.png
+      size: [2880, 1800]
+      crop: [700, 1289, 1650, 175]
+      url: platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence
+      caption: "Anthropic's own test"
+      source: "platform.claude.com · captured Nov 9, 2026"
+      highlight:
+        - { x: 1008, y: 1379, w: 326, h: 40, at: w953 }
+    - type: chips
+      at: w911
+      until: "w921 +0.1s"
+      items:
+        - { text: "Fable 5.2, alone", icon: user, at: w918 }
+        - { text: "High effort", icon: gauge, tone: accent, at: w920 }
+    - type: stat
+      at: w923
+      until: "w947 +0.1s"
+      items:
+        - { text: "$5⁠63", sub: "Fable 5.2 alone *High effort*", at: w923 }
+        - { text: "$1⁠65", sub: "Fable 5.2 + Sonnet 5.5 workers", at: w935 }
+        - { text: "7⁠1% less", sub: "per run", at: w938 }
+    - type: stat
+      at: w949
+      items:
+        - { text: "0⁠.909", sub: "Score (F1), alone on high effort", tone: muted, at: w949 }
+        - { text: "0⁠.833", sub: "Score (F1), with Sonnet 5.5 workers", tone: muted, at: w951 }
+        - { text: "7⁠.5", sub: "points lower", at: w953 }
+
+# ---------- 5:05.8 the rule ----------
+- kind: stage
+  at: w960
+  transition: cut
+  elements:
+    - type: story
+      actors:
+        - { id: t1, kind: text, x: 370, y: 170, size: 72, text: "Hand off the *bulk*.", at: w961 }
+        - { id: t2, kind: text, x: 1030, y: 170, size: 72, text: "Keep the *judgment*.", at: w970 }
+        - { id: tr, kind: image, src: media/D/trades.png, w: 250, h: 250, x: 370, y: 500, label: "Sonnet 5.5, Haiku 5.5", role: "The trades", at: w964 }
+        - { id: gc, kind: image, src: media/D/contractor.png, w: 250, h: 250, x: 1030, y: 500, label: "Fable 5.2", role: "The contractor", at: w972 }
+        - { id: chk, kind: badge, x: 1030, y: 880, text: "The final check", icon: circle-check, color: good, at: w975 }
+      beats:
+        - { at: w964, pulse: tr }
+        - { at: w972, pulse: gc }
+        - { at: w975, connect: tr, to: gc, label: "Work comes back", curve: -0.2 }
+        - { at: w979, highlight: gc }

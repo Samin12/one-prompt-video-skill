@@ -1,0 +1,14 @@
+# The top of the edit, shared by every part. Only the boss edits this file.
+# tools/merge.sh joins it with parts/*.yaml into edit.yaml.
+title: "{{TITLE}}"
+look: panel
+camera: { focus: [0.5, 0.3], zoom: 1.0 }   # centre the tile on the face: set from a still, once
+
+chapters:
+  heading: "{{TITLE}}"   # shorten to the topic, 2 to 4 words
+  logo: true
+  # The disclosure: sits above the avatar for the whole video. No scene may cover it.
+  badge: { eyebrow: "AI avatar", intro: "AI avatar, cloned voice" }
+  # One item per section after the first (scripts/parts.py prints these with their word ids).
+  # Add an icon to each (lucide names: lightbulb, sparkles, hammer, network, wrench, receipt, compass).
+  items: []

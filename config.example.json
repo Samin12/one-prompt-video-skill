@@ -1,0 +1,31 @@
+{
+  "_about": "Copy to ~/.config/one-prompt-video/defaults.json and fill in. These belong to the presenter, not to one video. A project's project.json can override any key. Keys starting with _ are notes and are ignored.",
+
+  "presenter": "Your Name",
+
+  "voice_id": "",
+  "_voice_id": "Higgsfield voice id of the saved clone (make it from about 2 minutes of raw mic audio; references/voice-avatar.md).",
+  "voice_type": "element",
+  "voice_model": "seed_audio",
+  "target_wpm": 198,
+  "_target_wpm": "Words a minute the presenter really speaks at. Measure it on two of their own videos.",
+  "wpm_range": [170, 232],
+
+  "image_id": "",
+  "_image_id": "Returned by: higgsfield upload create <photo>",
+  "photo_source": "~/path/to/the-one-real-photo.jpg",
+  "photo": "avatar/ref/presenter.jpg",
+  "_photo": "Where new_project.py copies the photo inside each project.",
+
+  "avatar_model": "wan3_0",
+  "resolution": "720p",
+  "avatar_prompt": "The person from @image1 sits in their studio and talks straight to camera, saying the line in @audio1 with accurate lip sync, natural blinks, small head movements and relaxed, sparing hand gestures. Keep the face, the clothes, every object in the room and the lighting exactly as in the image. Static camera, medium shot.",
+  "_avatar_prompt": "Name what is in YOUR photo that must not change (the shirt, the microphone, the shelf, the light). What the prompt does not pin down, the model redraws.",
+
+  "room_regions": {
+    "left": [0.326, 0.06, 0.40, 0.34],
+    "right": [0.56, 0.20, 0.654, 0.55],
+    "top": [0.34, 0.02, 0.64, 0.125]
+  },
+  "_room_regions": "Patches of room the presenter never crosses, as fractions of the frame [x0, y0, x1, y1]. Used by room_check.py."
+}

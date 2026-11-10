@@ -1,0 +1,167 @@
+# One take per block: "id | section" on the first line, then what the voice says (spoken forms).
+# Blank line between takes. Keep each take under about 60 words (the avatar clip limit is 30 s).
+# v3, Nov 9, 2026: the fact-checker's 13 fixes applied (script/factcheck.md).
+# v2, Nov 9, 2026: plan wording, Fermat "about 30 hours", effort numbers and limits fixed against
+# research/01-official.md and research/05-reactions.md.
+
+i01 | Intro
+Okay, so that was the real one. I'm not. I'm an AI clone of him. Same face, same voice, but nobody filmed me, and nobody recorded these words.
+
+i02 | Intro
+So Anthropic just released Claude Fable 5.2, and he gave it one prompt. Make the whole video. And Fable 5.2 didn't do it alone. It ran as the boss, and it handed the work out to a team of other agents.
+
+i03 | Intro
+The research, the script, this voice, the motion graphics you're about to see, and a thumbnail.
+
+i04 | Intro
+So in this video, I'm going to show you four things. What's actually new in Fable 5.2. What people are already building with it. How to run it as a boss with its own team, which is how this video got made. And when you should not use it at all.
+
+i05 | Intro
+And I'll show you where this run broke. Because it did. Let's get into it.
+
+w01 | Why This Matters
+Okay, so first, what is this thing, and why should you care? Imagine you run a company. You have an intern, a solid employee, and a senior person you trust with most of the work.
+
+w02 | Why This Matters
+And then there's that one specialist you only bring in for the hardest project of the year, because they're expensive. That's basically Claude's lineup. Haiku, Sonnet, Opus, and then Fable.
+
+w03 | Why This Matters
+And Fable 5.2 is the newest version of that specialist. Anthropic calls it their most capable model that's open to everyone, and they say it's built for long, hard jobs.
+
+w04 | Why This Matters
+And if you've seen the name Mythos 5.2, that's the same model with fewer safety filters, and only approved organizations get it. So, what changed with Fable? Four things.
+
+n01 | What's New
+Number one, it's cheaper. It's now 8 dollars per million tokens going in, and 40 dollars coming out. And that's down from 10 and 50.
+
+n02 | What's New
+And on the Max and Ultra plans, it's included, for up to half your weekly limit. On Pro, it's only included for launch week. After that, it runs on usage credits.
+
+n03 | What's New
+Number two, it's faster. Anthropic says up to 30 percent faster than Fable 5.1. And there's a fast mode that's up to two and a half times faster, for twice the price.
+
+n04 | What's New
+Number three, you get more for your money. On a coding test that Anthropic published, Fable 5.2 on high effort scored about the same as Opus 5.5 on max effort, for roughly half the cost per task.
+
+n05 | What's New
+And number four is the big one. This is the one this whole video is about. It got a lot better at managing other AI agents.
+
+n06 | What's New
+So Anthropic took a thousand Fable 5.2 agents, and had them turn the proof of Fermat's Last Theorem into something a computer can check, step by step. They finished in about 30 hours. And with the same setup, Opus 5.5 got about a quarter of the way there and basically stopped.
+
+n07 | What's New
+And in another experiment, one engineer gave it an empty folder and asked for an operating system. It coordinated over a thousand sub-agents for eight days, and it came back with an operating system that actually boots on a laptop.
+
+n08 | What's New
+Now, that's a prototype, and it's Anthropic's own experiment. But that's the direction, right? This model is not just a smarter chatbot. It's a manager.
+
+p01 | What People Are Building
+And it's not just Anthropic. Let me show you what people posted on day one. So Riley Brown says he gave it one prompt, live on stream. And it built a whole 3D room in Blender, animated 13 camera shots, rented 10 GPUs, and rendered a short film in 4K.
+
+p02 | What People Are Building
+Allie Miller asked it which big American cities are best set up for water. From one prompt, it pulled more than 5 gigabytes of federal data and built a map of thirty-one hundred counties. And then she had a dozen other agents check its work, and they found errors. I really like that part.
+
+p03 | What People Are Building
+Kieran Klaassen used to be a film composer. And he built his own music studio app, at night, in about one week.
+
+p04 | What People Are Building
+And at Uber, someone had Fable run a security audit for 10 to 12 hours. It sent out about 170 reviewer agents, and it came back with a write-up and the fixes.
+
+p05 | What People Are Building
+So, do you see the pattern? Long jobs. Big jobs. And one model in charge, with other agents doing the work.
+
+o01 | The Orchestrator
+Okay, so let me explain how that actually works, because this is the part you can copy. Imagine you're building a house, and you hire a general contractor. The contractor does not lay the bricks.
+
+o02 | The Orchestrator
+They read the plans, they split up the job, and they hire an electrician, a plumber and a painter. They tell each one exactly what done looks like. And before you ever see the house, they inspect the work.
+
+o03 | The Orchestrator
+So you pay the contractor's expensive rate for a few hours of thinking, and you pay the cheaper rate for hundreds of hours of doing. And that's an orchestrator.
+
+o04 | The Orchestrator
+Fable 5.2 is the contractor. It plans, it hands out the work, and it checks it. And cheaper models like Sonnet and Haiku are the trades. Each one gets one piece, does it in its own chat, and reports back.
+
+o05 | The Orchestrator
+He called this the octopus workflow back in his Fable 5.1 video. Same idea. One brain, a lot of arms.
+
+o06 | The Orchestrator
+And here's why it matters for your wallet. Fable 5.2 costs 40 dollars per million tokens coming out. Sonnet 5.5 costs 10. And Haiku 5.5 starts at 50 cents.
+
+o07 | The Orchestrator
+And Anthropic actually tested this. Fable 5.2 doing a big job alone, on high effort, cost 563 dollars a run. Fable 5.2 as the boss, with Sonnet workers, cost 165 dollars. That's about 70 percent less.
+
+o08 | The Orchestrator
+But I want to make sure you know this. It also scored about seven and a half points lower. So it's not free. You hand off the bulk of the work, and you keep the judgment and the final check on the expensive model.
+
+s01 | Set It Up
+So, with that being said, let me show you how to set this up. There are three ways. The first way is Claude Code, and I tested this one while making this video.
+
+s02 | Set It Up
+First things first, update Claude Code, and start it with Fable as the main model. Then you add three small files in a folder called agents. A researcher that runs on Haiku. A builder that runs on Sonnet. And a checker that runs on Sonnet.
+
+s03 | Set It Up
+And each file is basically a job description, with one line that says which model to use. Then you paste one paragraph that tells Fable, you're the boss. Plan first, hand out the work, and never accept anything until it's been checked.
+
+s04 | Set It Up
+And when I ran it on a small test bug, and told it to use all three, it did exactly that. Fable ran the job, the researcher ran on Haiku, and the builder and the checker ran on Sonnet.
+
+s05 | Set It Up
+It took 93 seconds, and at A P I prices it cost a dollar eighty-two. And a dollar fifty-two of that was Fable. The workers were 30 cents. So remember that. On a small job, the boss is the expensive part.
+
+s06 | Set It Up
+The second way needs no terminal at all. Anthropic has a new thing called Projects, where you pick a coordinator model and a thread model in the settings. But it's still rolling out, and it's not on his account yet. So for that one, I can only show you Anthropic's page.
+
+s07 | Set It Up
+And the third way is how this video was made. He uses an app called T three Code, and it lets one agent start other agents on any of his subscriptions. So Fable 5.2 was the parent, and it started workers on three of his Claude plans at the same time.
+
+s08 | Set It Up
+And every worker got a written brief. The goal. The context it needs, because it can't see the main chat. What done looks like. Where to save the work. And what not to touch.
+
+s09 | Set It Up
+And that done line really matters. Anthropic's own testing found this model sometimes stops early and leaves work undone. So honestly, that brief is the whole trick. A vague brief gets you the wrong house.
+
+s10 | Set It Up
+And if you want the three agent files, the boss prompt and that brief template, they'll be in the community. The link's in the description.
+
+x01 | When Not To Use It
+Okay, now the honest part. Because for a lot of you, this is probably overkill. And even Anthropic says so. Their own launch post says, for most coding and knowledge work, start with Opus 5.5.
+
+x02 | When Not To Use It
+So Fable 5.2 is for you if the job is big, messy, and takes hours. Or if it's too big to fit in one chat. And it's probably not for you if it's a quick question, a small edit, or one piece of writing that needs one voice. You don't hire a general contractor to hang one picture, right?
+
+x03 | When Not To Use It
+And a team is not always cheaper either. In Anthropic's own testing, handing work to sub-agents only came out ahead in two situations. And on that same test, Opus 5.5 as the boss got about the same score as Fable 5.2, for less money.
+
+x04 | When Not To Use It
+So for a simple split, Opus can be the boss. Fable earns that seat when the managing itself is the hard part. And a team mostly buys you speed. In Anthropic's tests, five agents got to the same score in half the time, but at a higher cost.
+
+x05 | When Not To Use It
+Also, don't just crank it to max effort. On that same coding test, max scored lower than extra high, and it cost about 45 dollars a task instead of 14.
+
+x06 | When Not To Use It
+And an independent tester, Artificial Analysis, shows the price of that. At max effort, it ranked number one for intelligence, and dead last for cost. But on medium, which is the default in the Claude apps, it was under 4 dollars a task. So pick your effort level before you pick your model.
+
+x07 | When Not To Use It
+And people who love this model are saying the same thing. Dan Shipper's team had the first version of a video editor running in three days. And he still says it's slow, and it burns through tokens. And Anthropic says this one straight up. Fable models use your plan limits faster than their other models.
+
+r01 | The Receipts
+And this video is a good example of both sides. So here's what actually happened on this run. His prompt asked for Fable 5.2 workers, not the cheap ones. So this was not the budget way to do it.
+
+r02 | The Receipts
+Two of the workers failed on the first try, because one of his setups couldn't run Fable 5.2 yet. So the boss moved them to another plan and kept going.
+
+r03 | The Receipts
+And at one point, the voice jobs and the thumbnail jobs were fighting over the same three slots, and most of the voice jobs failed. So it slowed down and ran them again.
+
+r04 | The Receipts
+It tested two ways to make this avatar, and it picked the cheaper one, because the expensive one changed the room halfway through. And every outside fact you saw on screen was captured from the real page by one agent, and then checked by a different one.
+
+c01 | Where This Is Going
+So here's where I think this is going. For the last couple of years, the question was, which model is the smartest. And I think the better question now is, which model should be the boss, and who's on its team.
+
+c02 | Where This Is Going
+Because one prompt just made almost this whole video, while the person who typed it was in Korea. Now, he still reviews this before it goes up. That part's still his job.
+
+c03 | Where This Is Going
+And if you want to build agent teams like this, watch this video here, or join Claude Club, where he's helping people set this up the right way. Have fun.

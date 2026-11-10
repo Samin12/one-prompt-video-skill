@@ -1,0 +1,14 @@
+{
+  "note": "The boss fills these in before the final render. A null value is drawn as an ellipsis, never as a made-up number. Add or remove rows to fit the video; every row must be something that happened.",
+  "rows": [
+    {"label": "Prompts about the video", "value": null},
+    {"label": "Agents the boss started", "value": null},
+    {"label": "Plans working at once", "value": null},
+    {"label": "Proof captures", "value": null},
+    {"label": "Script lines fact-checked", "value": null},
+    {"label": "Lines rewritten after the check", "value": null},
+    {"label": "Voice takes", "value": null},
+    {"label": "Credits spent", "value": null},
+    {"label": "Hours from prompt to video", "value": null}
+  ]
+}
